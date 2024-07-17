@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notícias</title>
 </head>
+
+<style>
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 100%;
+    }
+
+
+    ul {
+        list-style: none;
+        width: 50%;
+    }
+
+    ul li {
+        box-shadow: 5px 5px 10px gray;
+        margin: 1rem;
+        padding: 2rem;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .read {
+        background-color: rgb(0, 119, 119);
+        padding: 10px 40px;
+        color: aliceblue;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: 0.3s ease-in-out;
+    }
+    .read:hover{
+        background-color: rgb(1, 92, 92);
+    }
+</style>
+
 <body>
 
-    <h1>Últimas notícias</h1>
+    <center>
+        <h1>Últimas notícias</h1>
+    
+
     <ul>
         <% articles.forEach(article=> { %>
             <li>
@@ -17,10 +57,14 @@
                 <p>
                     <%= article.description %>
                 </p>
-                <a href="<%= article.url %>">Leia mais</a>
+                <a class="read" href="<%= article.url %>">Leia mais</a>
             </li>
             <% }); %>
     </ul>
+
+</center>
+
+    <!-- "node api.js" para rodar   -->
 
 </body>
 
